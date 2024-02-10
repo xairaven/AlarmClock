@@ -1,2 +1,4 @@
-# KPI-DPGI
-Repository containing lab assignments for the Declarative Programming of Graphical Interfaces course.
+# Декларативне програмування графічних інтерфейсів
+
+### Лабораторні роботи
+1. [Основи роботи з Git](./Lab1)
