@@ -20,4 +20,9 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        // throw new NotImplementedException();
+    }
 }
