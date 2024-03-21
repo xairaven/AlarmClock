@@ -8,7 +8,9 @@
         Height="200" Width="400"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" Loaded="MainWindow_OnLoaded"
-        MaxWidth="400" MaxHeight="200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        MaxWidth="400" MaxHeight="200" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="Alarm Clock">
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="200" />
