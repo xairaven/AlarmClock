@@ -9,6 +9,13 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
     
+    <Style x:Key="MainWindowButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Height" Value="25"/>
+    </Style>
+    
     <FontFamily x:Key="Stormfaze">../../Assets/Fonts/stormfaze.ttf#Stormfaze</FontFamily>
     <FontFamily x:Key="Digital-7">../../Assets/Fonts/digital-7.ttf#Digital-7</FontFamily>
 </ResourceDictionary>
