@@ -25,13 +25,17 @@ public partial class MainWindow : Window
 
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
-        var timer = new DispatcherTimer();
-        timer.Interval = TimeSpan.FromSeconds(1);
+        TimerTick(null, null);
+        
+        var timer = new DispatcherTimer
+        {
+            Interval = TimeSpan.FromSeconds(1)
+        };
         timer.Tick += TimerTick;
         timer.Start();
     }
 
-    private void TimerTick(object? sender, EventArgs e)
+    private void TimerTick(object? sender, EventArgs? e)
     {
         var dateTime = DateTime.Now;
         
