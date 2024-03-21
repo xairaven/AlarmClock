@@ -8,8 +8,13 @@
         Height="200" Width="400"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" Loaded="MainWindow_OnLoaded">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="200" />
+    </WindowChrome.WindowChrome>
+    
     <Border CornerRadius="50" BorderBrush="#15d455" BorderThickness="5" Background="#2D2D30">
-        <StackPanel>
+        <StackPanel WindowChrome.IsHitTestVisibleInChrome="True">
             <StackPanel HorizontalAlignment="Center">
                 <Label Foreground="#3AEB17"
                        Margin="0 15 0 0"
