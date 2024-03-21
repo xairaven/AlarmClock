@@ -4,7 +4,10 @@
              xmlns:local="clr-namespace:Lab3"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         <FontFamily x:Key="Stormfaze">./Assets/Fonts/stormfaze.ttf#Stormfaze</FontFamily>
-         <FontFamily x:Key="Digital-7">./Assets/Fonts/digital-7.ttf#Digital-7</FontFamily>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Views/Styles/MainStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
