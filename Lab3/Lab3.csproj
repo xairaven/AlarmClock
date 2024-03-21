@@ -16,4 +16,29 @@
       </Page>
     </ItemGroup>
 
+    <ItemGroup>
+        <None Remove="Assets\Fonts\stormfaze.ttf" />
+        <Resource Include="Assets\Fonts\stormfaze.ttf">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Resource>
+        <None Remove="Assets\Fonts\digital-7.ttf" />
+        <Content Include="Assets\Fonts\digital-7.ttf">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Icons\ClockAlarm.png" />
+        <None Remove="Assets\Icons\Exit.png" />
+        <Content Include="Assets\Icons\Exit.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Icons\AlarmClock.png" />
+        <Content Include="Assets\Icons\AlarmClock.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Icons\Settings.png" />
+        <Content Include="Assets\Icons\Settings.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    
+    
 </Project>
