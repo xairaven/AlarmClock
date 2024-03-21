@@ -38,7 +38,7 @@ public partial class MainWindow : Window
         HourLabel.Content = $"{dateTime.Hour:00}";
         MinuteLabel.Content = $"{dateTime.Minute:00}";
         SecondLabel.Content = $"{dateTime.Second:00}";
-        // DayLabel = $"{dateTime.DayOfWeek}";
+        DayLabel.Content = $"{dateTime.DayOfWeek.ToString()[..3]}";
         DateLabel.Content = $"{dateTime.Day:00}/{dateTime.Month:00}/{dateTime.Year:0000}";
     }
 
