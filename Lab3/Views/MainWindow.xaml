@@ -46,6 +46,7 @@
                     <Image Source="../Assets/Icons/AlarmClock.png" />
                 </Button>
                 <Button Background="Transparent" BorderBrush="Transparent" 
+                        Click="App_Exit"
                         Width="25" Height="25" HorizontalAlignment="Center">
                     <Image Source="../Assets/Icons/Exit.png" />
                 </Button>

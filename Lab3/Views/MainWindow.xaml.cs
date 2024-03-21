@@ -25,4 +25,9 @@ public partial class MainWindow : Window
     {
         // throw new NotImplementedException();
     }
+
+    private void App_Exit(object sender, RoutedEventArgs e)
+    {
+        Application.Current.Shutdown();
+    }
 }
