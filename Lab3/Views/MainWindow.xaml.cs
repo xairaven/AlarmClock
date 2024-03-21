@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Lab3.Views;
 
 namespace Lab3;
 
@@ -49,5 +50,15 @@ public partial class MainWindow : Window
     private void App_Exit(object sender, RoutedEventArgs e)
     {
         Application.Current.Shutdown();
+    }
+
+    private void Open_Settings(object sender, RoutedEventArgs e)
+    {
+        new Settings().Show();
+    }
+
+    private void Open_AlarmsList(object sender, RoutedEventArgs e)
+    {
+        new AlarmsList().Show();
     }
 }
