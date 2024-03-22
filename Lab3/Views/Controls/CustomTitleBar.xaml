@@ -15,7 +15,7 @@
                 Click="Resize_Window">
             <Image Source="../../Assets/WindowsIcons/Restore.png" />
         </Button>
-        <Button Style="{StaticResource TitleBarIcons}"
+        <Button Style="{StaticResource TitleBarExit}"
                 Click="Exit_Window">
             <Image Source="../../Assets/WindowsIcons/Close.png" />
         </Button>
