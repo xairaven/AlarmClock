@@ -9,20 +9,35 @@
         WindowStartupLocation="CenterScreen"
         Width="400" Height="500"
         Style="{StaticResource AuxiliaryWindow}">
-    
+
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="200" />
     </WindowChrome.WindowChrome>
-    
+
     <Border Style="{StaticResource WindowBorder}">
         <Grid WindowChrome.IsHitTestVisibleInChrome="True">
             <Grid.RowDefinitions>
-                <RowDefinition Height="32px"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="32px" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
+
             <uc:CustomTitleBar Grid.Row="0" WindowTitle="Alarms"
-                               WindowIcon="../../Assets/Icons/AlarmClock.png"/>
+                               WindowIcon="../../Assets/Icons/AlarmClock.png" />
+
+            <Border Grid.Row="1" Margin="10"
+                    CornerRadius="10" Background="#424244">
+                <Button x:Name="AddAlarmButton"
+                        Content="Add Alarm"
+                        Style="{StaticResource AddAlarmButtonStyle}"/>
+            </Border>
+
+
+            <ScrollViewer Grid.Row="2">
+                <StackPanel>
+
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Border>
 </Window>

@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Views/Styles/MainStyles.xaml" />
                 <ResourceDictionary Source="Views/Styles/WindowStyles.xaml" />
+                <ResourceDictionary Source="Views/Styles/AlarmsListStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

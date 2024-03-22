@@ -51,6 +51,10 @@
         <Content Include="Assets\WindowsIcons\Restore.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Assets\Fonts\ProductSans-Regular.ttf" />
+        <Resource Include="Assets\Fonts\ProductSans-Regular.ttf">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Resource>
     </ItemGroup>
     
     
