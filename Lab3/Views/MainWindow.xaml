@@ -68,6 +68,7 @@
                 </Button>
                 <Button Style="{StaticResource MainWindowButton}"
                         HorizontalAlignment="Center"
+                        IsCancel="True"
                         Click="App_Exit">
                     <Image Source="../Assets/Icons/Exit.png" />
                 </Button>
