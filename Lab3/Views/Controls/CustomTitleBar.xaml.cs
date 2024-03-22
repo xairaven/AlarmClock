@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Lab3.Views.Controls;
 
@@ -12,6 +14,20 @@ public partial class CustomTitleBar : UserControl
         set => WindowTitleLabel.Content = value;
     }
     
+    [Description("Window Icon. 16x16 px."),Category("Icon")] 
+    public string WindowIcon
+    {
+        get => WindowIconImage.Source.ToString();
+        set
+        {
+            var icon = new BitmapImage(new Uri(value, UriKind.Relative))
+            {
+                CacheOption = BitmapCacheOption.OnLoad
+            };
+            WindowIconImage.Source = icon;
+        }
+    }
+
     public CustomTitleBar()
     {
         InitializeComponent();

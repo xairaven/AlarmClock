@@ -21,7 +21,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <uc:CustomTitleBar Grid.Row="0" WindowTitle="Alarms"/>
+            <uc:CustomTitleBar Grid.Row="0" WindowTitle="Alarms"
+                               WindowIcon="../../Assets/Icons/AlarmClock.png"/>
         </Grid>
     </Border>
 </Window>

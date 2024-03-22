@@ -8,11 +8,13 @@
              d:DesignHeight="32px">
     <Grid Style="{StaticResource TitleBarPanel}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="16px"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="60px"/>
         </Grid.ColumnDefinitions>
+        
+        <Image x:Name="WindowIconImage" Grid.Column="0" Width="20" Height="20"/>
         
         <Label x:Name="WindowTitleLabel" Grid.Column="1"
                HorizontalContentAlignment="Center"

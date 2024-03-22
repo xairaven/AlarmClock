@@ -20,7 +20,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <uc:CustomTitleBar Grid.Row="0" WindowTitle="Settings"/>
+            <uc:CustomTitleBar Grid.Row="0" 
+                               WindowTitle="Settings"
+                               WindowIcon="../../Assets/Icons/Settings.png"/>
         </Grid>
     </Border>
 </Window>
