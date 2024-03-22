@@ -1,10 +1,17 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Lab3.Views.Controls;
 
 public partial class CustomTitleBar : UserControl
 {
+    [Description("Window Title"),Category("Title")] 
+    public string WindowTitle {
+        get => (string) WindowTitleLabel.Content;
+        set => WindowTitleLabel.Content = value;
+    }
+    
     public CustomTitleBar()
     {
         InitializeComponent();

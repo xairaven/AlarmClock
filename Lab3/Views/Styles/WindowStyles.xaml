@@ -19,10 +19,8 @@
         <Setter Property="BorderThickness" Value="1" />
     </Style>
 
-    <Style x:Key="TitleBarPanel" TargetType="StackPanel">
+    <Style x:Key="TitleBarPanel" TargetType="Grid">
         <Setter Property="Margin" Value="0 0 10px 0" />
-        <Setter Property="Orientation" Value="Horizontal" />
-        <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="Height" Value="32px" />
     </Style>
 

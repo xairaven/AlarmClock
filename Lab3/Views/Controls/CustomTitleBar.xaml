@@ -6,18 +6,36 @@
              xmlns:local="clr-namespace:Lab3.Views.Controls"
              mc:Ignorable="d"
              d:DesignHeight="32px">
-    <StackPanel Style="{StaticResource TitleBarPanel}">
-        <Button Style="{StaticResource TitleBarIcons}"
-                Click="Minimize_Window">
-            <Image Source="../../Assets/WindowsIcons/Minimize.png" />
-        </Button>
-        <Button Style="{StaticResource TitleBarIcons}"
-                Click="Resize_Window">
-            <Image Source="../../Assets/WindowsIcons/Restore.png" />
-        </Button>
-        <Button Style="{StaticResource TitleBarExit}"
-                Click="Exit_Window">
-            <Image Source="../../Assets/WindowsIcons/Close.png" />
-        </Button>
-    </StackPanel>
+    <Grid Style="{StaticResource TitleBarPanel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16px"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60px"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label x:Name="WindowTitleLabel" Grid.Column="1"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Foreground="#D5D5D5"
+               FontWeight="Medium"/>
+        
+        <StackPanel Grid.Column="3" Orientation="Horizontal">
+            <Button Style="{StaticResource TitleBarIcons}"
+                    Click="Minimize_Window"
+                    DockPanel.Dock="Right">
+                <Image Source="../../Assets/WindowsIcons/Minimize.png" />
+            </Button>
+            <Button Style="{StaticResource TitleBarIcons}"
+                    Click="Resize_Window"
+                    DockPanel.Dock="Right">
+                <Image Source="../../Assets/WindowsIcons/Restore.png" />
+            </Button>
+            <Button Style="{StaticResource TitleBarExit}"
+                    DockPanel.Dock="Right"
+                    Click="Exit_Window">
+                <Image Source="../../Assets/WindowsIcons/Close.png" />
+            </Button>
+        </StackPanel>
+    </Grid>
 </UserControl>
