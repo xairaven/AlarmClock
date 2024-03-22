@@ -39,6 +39,18 @@
         <Content Include="Assets\Icons\Settings.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Assets\WindowsIcons\Close.png" />
+        <Content Include="Assets\WindowsIcons\Close.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\WindowsIcons\Minimize.png" />
+        <Content Include="Assets\WindowsIcons\Minimize.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\WindowsIcons\Restore.png" />
+        <Content Include="Assets\WindowsIcons\Restore.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     
     
