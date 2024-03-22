@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab3"
         mc:Ignorable="d"
-        Height="200" Width="400"
+        Height="215" Width="410"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" Loaded="MainWindow_OnLoaded"
-        MaxWidth="400" MaxHeight="200" 
+        MaxWidth="410" MaxHeight="215" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="Alarm Clock">
 
