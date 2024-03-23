@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Windows;
 using AlarmClock.Controllers;
 using AlarmClock.Data;
 using AlarmClock.Views.Controls;
@@ -75,7 +76,9 @@ public partial class AddAlarmWindow : Window
             
             var datetime = record.DateTime;
             element.Time = $"{datetime.Hour:00}:{datetime.Minute}";
-            element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00}/{datetime.Month:00}/{datetime.Year:0000}";
+            
+            var monthName = datetime.ToString("MMM", CultureInfo.InvariantCulture);
+            element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00} {monthName}";
             
             listPanel.Children.Add(element);
         }
