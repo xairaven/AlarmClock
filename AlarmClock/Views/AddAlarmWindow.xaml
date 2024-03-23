@@ -55,7 +55,6 @@
                     <Border Grid.Row="1" Grid.Column="1"
                             Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
                         <syncfusion:SfDatePicker x:Name="DatePicker"
-                                                 ValueChanged="DatePicker_OnValueChanged"
                                                  FormatString="dd.MM.yyyy"
                                                  Style="{StaticResource PickerAddAlarm}"
                                                  ShowDropDownButton="False"
