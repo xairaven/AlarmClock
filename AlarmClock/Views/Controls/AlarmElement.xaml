@@ -9,8 +9,10 @@
     <Border Style="{StaticResource AlarmElementBorder}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="25*" />
-                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="35*" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="30*" />
                 <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
@@ -25,14 +27,34 @@
                        Foreground="LightGray"
                        />
             
-            <Label Grid.Column="2" x:Name="DateLabel" Content="Mon, 00 Jan"
+            <Rectangle Grid.Column="1" 
+                       Width="1"
+                       Height="30"
+                       Fill="#565659"
+                       Stroke="#565659" />
+            
+            <Label Grid.Column="2" 
                    Style="{StaticResource AlarmElementCenteredText}"
+                   Margin="5 0 5 0"
                    HorizontalAlignment="Left"
+                   FontSize="13"
+                   FontFamily="{StaticResource  GoogleSans}"
+                   Foreground="LightGray"
+            ><TextBlock x:Name="TitleTextBlock" TextTrimming="CharacterEllipsis" /></Label>
+            
+            <Rectangle Grid.Column="3" 
+                       Width="1"
+                       Height="30"
+                       Fill="#565659"
+                       Stroke="#565659" />
+            
+            <Label Grid.Column="4" x:Name="DateLabel" Content="Mon, 00 Jan"
+                   Style="{StaticResource AlarmElementCenteredText}"
                    FontFamily="{StaticResource GoogleSans}"
                    FontSize="16"
                    Foreground="DarkGray"/>
             
-            <Button Grid.Column="3" Click="SwitchStatus" Style="{StaticResource AlarmElementSwitchButton}">
+            <Button Grid.Column="5" Click="SwitchStatus" Style="{StaticResource AlarmElementSwitchButton}">
                 <Image x:Name="SwitchImage" Source="../../Assets/Icons/SwitchOn.png" />
             </Button>
         </Grid>

@@ -7,6 +7,12 @@ namespace AlarmClock.Views.Controls;
 
 public partial class AlarmElement : UserControl
 {
+    [Description("Title. Example: School"), Category("Alarm")] 
+    public string Title {
+        get => TitleTextBlock.Text;
+        set => TitleTextBlock.Text = value;
+    }
+    
     [Description("Time. Example: 00:00"), Category("Alarm")] 
     public string Time {
         get => (string) TimeLabel.Content;

@@ -27,8 +27,7 @@
 
             <Border Grid.Row="1" Margin="10"
                     CornerRadius="10" Background="#424244">
-                <Button x:Name="AddAlarmButton"
-                        Content="Add Alarm"
+                <Button Content="Add Alarm"
                         Style="{StaticResource AddAlarmButtonStyle}"
                         Click="AddAlarmShow"/>
             </Border>
@@ -38,9 +37,11 @@
                 <ScrollViewer >
                     <StackPanel>
                         <uc:AlarmElement Padding="5"
+                                         Title="AAAAAAAAAAAAAAAAAAAAAA"
                                          Time="10:10"
                                          Date="Fri, 23 Mar"/>
                         <uc:AlarmElement Padding="5"
+                                         Title="School"
                                          Time="23:59"
                                          Date="Mon, 19 Jul"/>
                     </StackPanel>
