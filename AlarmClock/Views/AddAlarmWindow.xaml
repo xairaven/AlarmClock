@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:AlarmClock.Views"
         xmlns:uc="clr-namespace:AlarmClock.Views.Controls"
+        xmlns:syncfusion="clr-namespace:Syncfusion.Windows.Controls.Input;assembly=Syncfusion.SfInput.Wpf"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Width="200" Height="200"
@@ -24,6 +25,58 @@
             
             <uc:CustomTitleBar Grid.Row="0" WindowTitle="Add Alarm"
                                WindowIcon="../../Assets/Icons/AlarmClock.png" />
+            
+            <Border Grid.Row="1" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10" 
+                    Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0"
+                            Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
+                        <syncfusion:SfTimePicker x:Name="TimePicker" 
+                                                 Background="Transparent" BorderBrush="Transparent"
+                                                 Foreground="#E9F0F0" VerticalContentAlignment="Center"
+                                                 FontSize="16" FormatString="HH:mm"/>
+                    </Border>
+                    
+                    <Border Grid.Row="1"
+                            Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
+                        <syncfusion:SfDatePicker x:Name="DatePicker"
+                                                 ValueChanged="DatePicker_OnValueChanged"
+                            Background="Transparent" BorderBrush="Transparent"
+                                                 Foreground="#E9F0F0" VerticalContentAlignment="Center"
+                                                 FontSize="16" FormatString="dd.MM.yyyy"/>
+                    </Border>
+                    
+                    
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Grid.Column="1"  Width="50" CornerRadius="10" Background="#6c6c6e">
+                            <Button Content="Cancel"
+                                    Click="CancelAddAlarm"
+                                    Style="{StaticResource ButtonsAddAlarm}"/>
+                        </Border>
+                        
+                        <Border Grid.Column="3"  Width="50" CornerRadius="10" Background="#6c6c6e">
+                            <Button Content="Save"
+                                    Click="SaveAlarm"
+                                    Style="{StaticResource ButtonsAddAlarm}"
+                            />
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
         </Grid>
     </Border>
 </Window>

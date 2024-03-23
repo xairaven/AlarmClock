@@ -66,6 +66,10 @@
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Syncfusion.SfInput.WPF" Version="25.1.35" />
+    </ItemGroup>
     
     
 </Project>
