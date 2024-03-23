@@ -8,4 +8,9 @@ public partial class AlarmsList : Window
     {
         InitializeComponent();
     }
+
+    private void AddAlarmShow(object sender, RoutedEventArgs e)
+    {
+        new AddAlarmWindow().Show();
+    }
 }

@@ -29,7 +29,8 @@
                     CornerRadius="10" Background="#424244">
                 <Button x:Name="AddAlarmButton"
                         Content="Add Alarm"
-                        Style="{StaticResource AddAlarmButtonStyle}"/>
+                        Style="{StaticResource AddAlarmButtonStyle}"
+                        Click="AddAlarmShow"/>
             </Border>
 
 
