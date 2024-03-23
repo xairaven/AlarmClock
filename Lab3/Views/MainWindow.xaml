@@ -46,18 +46,18 @@
                            Style="{StaticResource ClockSymbols}" />
                 </StackPanel>
 
-                <DockPanel Width="125">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label x:Name="DayLabel" Content="MON"
-                           DockPanel.Dock="Left" HorizontalAlignment="Left"
+                           HorizontalAlignment="Left"
                            FontFamily="{StaticResource Digital-7}"
                            Foreground="#3AEB17"
                            FontSize="18" />
                     <Label x:Name="DateLabel" Content="21/03/2024"
-                           DockPanel.Dock="Right" HorizontalAlignment="Right"
+                           HorizontalAlignment="Right"
                            FontFamily="{StaticResource Digital-7}"
                            Foreground="#3AEB17"
                            FontSize="18" />
-                </DockPanel>
+                </StackPanel>
             </StackPanel>
 
             <Grid Width="125" HorizontalAlignment="Center" Margin="0 5 0 0 ">
