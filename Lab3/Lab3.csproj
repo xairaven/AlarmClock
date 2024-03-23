@@ -55,6 +55,14 @@
         <Resource Include="Assets\Fonts\ProductSans-Regular.ttf">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Resource>
+        <None Remove="Assets\Icons\SwitchOff.png" />
+        <Content Include="Assets\Icons\SwitchOff.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Icons\SwitchOn.png" />
+        <Content Include="Assets\Icons\SwitchOn.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     
     

@@ -33,11 +33,19 @@
             </Border>
 
 
-            <ScrollViewer Grid.Row="2">
-                <StackPanel>
-
-                </StackPanel>
-            </ScrollViewer>
+            <Border Grid.Row="2" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10">
+                <ScrollViewer >
+                    <StackPanel>
+                        <uc:AlarmElement Padding="5"
+                                         Time="10:10"
+                                         Date="Fri, 23 Mar"/>
+                        <uc:AlarmElement Padding="5"
+                                         Time="23:59"
+                                         Date="Mon, 19 Jul"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+            
         </Grid>
     </Border>
 </Window>

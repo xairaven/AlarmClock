@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Views/Styles/MainStyles.xaml" />
                 <ResourceDictionary Source="Views/Styles/WindowStyles.xaml" />
                 <ResourceDictionary Source="Views/Styles/AlarmsListStyles.xaml" />
+                <ResourceDictionary Source="Views/Styles/AlarmElementStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
