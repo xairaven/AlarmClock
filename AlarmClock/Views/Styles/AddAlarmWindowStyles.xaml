@@ -2,6 +2,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:System="clr-namespace:System;assembly=System.Runtime">
     
+    <Style x:Key="LabelAddAlarm" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource GoogleSans}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="#E9F0F0" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    
+    <Style x:Key="PickerAddAlarm" TargetType="Control" >
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#E9F0F0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+     
     <Style x:Key="ButtonsAddAlarm" TargetType="Button">
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="Transparent" />

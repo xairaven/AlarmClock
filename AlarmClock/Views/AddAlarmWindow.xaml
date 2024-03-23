@@ -26,34 +26,44 @@
             <uc:CustomTitleBar Grid.Row="0" WindowTitle="Add Alarm"
                                WindowIcon="../../Assets/Icons/AlarmClock.png" />
             
-            <Border Grid.Row="1" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10" 
+            <Border Grid.Row="1" Margin="5" BorderBrush="#424244" BorderThickness="1" CornerRadius="10" 
                     Padding="5">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
                     
-                    <Border Grid.Row="0"
+                    <Label Grid.Row="0" Grid.Column="0" Content="Time:" 
+                           Style="{StaticResource LabelAddAlarm}"/>
+                    <Border Grid.Row="0" Grid.Column="1"
                             Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
-                        <syncfusion:SfTimePicker x:Name="TimePicker" 
-                                                 Background="Transparent" BorderBrush="Transparent"
-                                                 Foreground="#E9F0F0" VerticalContentAlignment="Center"
-                                                 FontSize="16" FormatString="HH:mm"/>
+                        <syncfusion:SfTimePicker x:Name="TimePicker"
+                                                 FormatString="HH:mm" 
+                                                 Style="{StaticResource PickerAddAlarm}"
+                                                 ShowDropDownButton="False"
+                                                 AllowInlineEditing="True"/>
                     </Border>
                     
-                    <Border Grid.Row="1"
+                    <Label Grid.Row="1" Grid.Column="0" Content="Date:" 
+                           Style="{StaticResource LabelAddAlarm}"/>
+                    <Border Grid.Row="1" Grid.Column="1"
                             Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
                         <syncfusion:SfDatePicker x:Name="DatePicker"
                                                  ValueChanged="DatePicker_OnValueChanged"
-                            Background="Transparent" BorderBrush="Transparent"
-                                                 Foreground="#E9F0F0" VerticalContentAlignment="Center"
-                                                 FontSize="16" FormatString="dd.MM.yyyy"/>
+                                                 FormatString="dd.MM.yyyy"
+                                                 Style="{StaticResource PickerAddAlarm}"
+                                                 ShowDropDownButton="False"
+                                                 AllowInlineEditing="True"/>
                     </Border>
                     
                     
-                    <Grid Grid.Row="2">
+                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>
@@ -62,13 +72,13 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Border Grid.Column="1"  Width="50" CornerRadius="10" Background="#6c6c6e">
+                        <Border Grid.Column="1"  Width="55" CornerRadius="10" Background="#6c6c6e">
                             <Button Content="Cancel"
                                     Click="CancelAddAlarm"
                                     Style="{StaticResource ButtonsAddAlarm}"/>
                         </Border>
                         
-                        <Border Grid.Column="3"  Width="50" CornerRadius="10" Background="#6c6c6e">
+                        <Border Grid.Column="3"  Width="55" CornerRadius="10" Background="#6c6c6e">
                             <Button Content="Save"
                                     Click="SaveAlarm"
                                     Style="{StaticResource ButtonsAddAlarm}"
