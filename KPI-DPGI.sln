@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "Lab2\Lab2.csproj", "{C83C4EBF-878C-4197-AB63-401E045CAE48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{CFF015F4-1CA1-43D0-B1AD-CF6FB4839A93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmClock", "AlarmClock\AlarmClock.csproj", "{CFF015F4-1CA1-43D0-B1AD-CF6FB4839A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

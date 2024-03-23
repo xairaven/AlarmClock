@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using Lab3.Views;
+using AlarmClock.Views;
 
 namespace Lab3;
 

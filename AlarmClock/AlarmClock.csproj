@@ -7,6 +7,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
         <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+        <AssemblyName>AlarmClock</AssemblyName>
+        <RootNamespace>AlarmClock</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

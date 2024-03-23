@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Lab3.Views.Controls.CustomTitleBar"
+﻿<UserControl x:Class="AlarmClock.Views.Controls.CustomTitleBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Lab3.Views.Controls"
+             xmlns:local="clr-namespace:AlarmClock.Views.Controls"
              mc:Ignorable="d"
              d:DesignHeight="32px">
     <Grid Style="{StaticResource TitleBarPanel}">

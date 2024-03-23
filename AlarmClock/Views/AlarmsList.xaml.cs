@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Lab3.Views;
+namespace AlarmClock.Views;
 
 public partial class AlarmsList : Window
 {

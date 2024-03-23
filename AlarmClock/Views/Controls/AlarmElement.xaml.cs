@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
-namespace Lab3.Views.Controls;
+namespace AlarmClock.Views.Controls;
 
 public partial class AlarmElement : UserControl
 {
