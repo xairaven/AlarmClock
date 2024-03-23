@@ -1,16 +1,21 @@
 ﻿using System.Windows;
 using AlarmClock.Controllers;
 using AlarmClock.Data;
+using AlarmClock.Views.Controls;
 
 namespace AlarmClock.Views;
 
 public partial class AddAlarmWindow : Window
 {
-    public AddAlarmWindow()
+    private AlarmsList _listWindow;
+    
+    public AddAlarmWindow(AlarmsList window)
     {
         InitializeComponent();
         DatePicker.MinDate = DateTime.Now.Date;
         TimePicker.Value = DateTime.Now;
+
+        _listWindow = window;
     }
 
     private void CancelAddAlarm(object sender, RoutedEventArgs e)
@@ -35,7 +40,9 @@ public partial class AddAlarmWindow : Window
 
         var resultDatetime = date.Date.Add(time);
 
-        AlarmController.AddRecord(resultDatetime);
+        AlarmController.AddRecord("", resultDatetime);
+        
+        UpdateList();
 
         Close();
     }
@@ -52,5 +59,25 @@ public partial class AddAlarmWindow : Window
         // Compare TimePicker and Datetime.now.
         // If TimePicker is later (> 0) than DateTime.now, its real alarm
         return time.CompareTo(DateTime.Now.TimeOfDay) > 0;
+    }
+
+    private void UpdateList()
+    {
+        var listPanel = _listWindow.ListPanel;
+
+        listPanel.Children.Clear();
+        foreach (var record in AlarmController.AlarmList)
+        {
+            var element = new AlarmElement();
+
+            element.Id = record.Id;
+            element.Title = record.Title;
+            
+            var datetime = record.DateTime;
+            element.Time = $"{datetime.Hour:00}:{datetime.Minute}";
+            element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00}/{datetime.Month:00}/{datetime.Year:0000}";
+            
+            listPanel.Children.Add(element);
+        }
     }
 }

@@ -11,6 +11,6 @@ public partial class AlarmsList : Window
 
     private void AddAlarmShow(object sender, RoutedEventArgs e)
     {
-        new AddAlarmWindow().Show();
+        new AddAlarmWindow(this).Show();
     }
 }

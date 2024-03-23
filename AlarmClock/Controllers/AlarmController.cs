@@ -6,9 +6,9 @@ public static class AlarmController
 {
     public static List<AlarmRecord> AlarmList { get; } = [];
 
-    public static AlarmRecord AddRecord(DateTime dateTime)
+    public static AlarmRecord AddRecord(string title, DateTime dateTime)
     {
-        var alarm = new AlarmRecord(dateTime); 
+        var alarm = new AlarmRecord(title, dateTime); 
         
         AlarmList.Add(alarm);
         return alarm;
