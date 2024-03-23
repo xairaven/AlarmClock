@@ -32,9 +32,8 @@
                         Click="AddAlarmShow"/>
             </Border>
 
-
             <Border Grid.Row="2" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10">
-                <ScrollViewer >
+                <ScrollViewer>
                     <StackPanel>
                         <uc:AlarmElement Padding="5"
                                          Title="AAAAAAAAAAAAAAAAAAAAAA"
