@@ -35,14 +35,9 @@
 
             <Border Grid.Row="2" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10">
                 <ScrollViewer>
-                    <StackPanel x:Name="ListPanel" >
-                        <uc:AlarmElement Title="Something"
-                                         Time="15:35"
-                                         Date="Sun, 31 Mar"/> 
-                    </StackPanel>
+                    <StackPanel x:Name="ListPanel" />
                 </ScrollViewer>
             </Border>
-
         </Grid>
     </Border>
 </Window>

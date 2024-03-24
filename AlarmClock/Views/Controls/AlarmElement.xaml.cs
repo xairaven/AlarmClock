@@ -60,4 +60,16 @@ public partial class AlarmElement : UserControl
         var alarmRecord = AlarmRepository.GetRecord(Id);
         alarmRecord.IsAlarmEnabled = IsAlarmEnabled;
     }
+
+    private void EditAlarm(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void DeleteAlarm(object sender, RoutedEventArgs e)
+    {
+        AlarmRepository.RemoveRecord(Id);
+        
+        ((Panel) this.Parent).Children.Remove(this);
+    }
 }
