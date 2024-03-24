@@ -23,6 +23,78 @@
             <uc:CustomTitleBar Grid.Row="0" 
                                WindowTitle="Settings"
                                WindowIcon="../../Assets/Icons/Settings.png"/>
+            
+            <Border Grid.Row="1" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Row="0" Grid.Column="0" Content="Music:"
+                           Style="{StaticResource SettingsLabel}"/>
+                    <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#424244" />
+                    
+                    <Label Grid.Row="2" Grid.Column="0" Content="Alarm Duration:"
+                           Style="{StaticResource SettingsLabel}" />
+                    
+                    
+                    <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Height="30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Grid.Column="1"  Width="55" CornerRadius="10" Background="#6c6c6e">
+                            <Button Content="Cancel"
+                                    Click="Close"
+                                    Style="{StaticResource ButtonsAddAlarm}"/>
+                        </Border>
+                        
+                        <Border Grid.Column="3"  Width="55" CornerRadius="10" Background="#6c6c6e">
+                            <Button Content="Save"
+                                    Style="{StaticResource ButtonsAddAlarm}"
+                            />
+                        </Border>
+                    </Grid>
+                    
+                    <Separator Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="#424244" />
+                    
+                    <Grid Grid.Row="5" Grid.Column="0" ColumnSpan="2" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0" Content="Credits:"
+                               FontFamily="{StaticResource Stormfaze}"
+                               Style="{StaticResource CreditsLabel}"
+                               FontSize="24"/>
+                        <Image Grid.Row="1" Source="../../Assets/Credits/GithubProfilePhoto.png" Margin="0 5"/>
+                        
+                        <Label Grid.Row="2" Content="Kovalov Alex"
+                               Style="{StaticResource CreditsLabel}"/>
+                        <Label Grid.Row="3" Content="Kyiv Polytechnic Institute, 2024"
+                               Style="{StaticResource CreditsLabel}"/>
+                        <Label Grid.Row="4" Content="Github Profile" 
+                               Style="{StaticResource CreditsLabel}"/>
+                    </Grid>
+                </Grid>
+            </Border>
         </Grid>
     </Border>
 </Window>

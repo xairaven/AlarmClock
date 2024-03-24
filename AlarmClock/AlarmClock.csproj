@@ -78,6 +78,10 @@
         <Content Include="Assets\Icons\AlarmSettings.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Assets\Credits\GithubProfilePhoto.png" />
+        <Content Include="Assets\Credits\GithubProfilePhoto.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>

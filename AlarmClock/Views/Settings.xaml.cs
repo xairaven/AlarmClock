@@ -8,4 +8,9 @@ public partial class Settings : Window
     {
         InitializeComponent();
     }
+
+    private void Close(object sender, RoutedEventArgs e)
+    {
+        Close();
+    }
 }

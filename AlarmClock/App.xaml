@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="Views/Styles/AlarmElementStyles.xaml" />
                 <ResourceDictionary Source="Views/Styles/Scrollbar.xaml" />
                 <ResourceDictionary Source="Views/Styles/AddAlarmWindowStyles.xaml" />
+                <ResourceDictionary Source="Views/Styles/SettingsStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
