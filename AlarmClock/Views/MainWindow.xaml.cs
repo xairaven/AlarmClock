@@ -33,12 +33,8 @@ public partial class MainWindow : Window
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
         TimerTick(null, null);
-        
-        var timer = new DispatcherTimer
-        {
-            Interval = TimeSpan.FromSeconds(1)
-        };
-        timer.Tick += TimerTick;
+
+        var timer = new TimerService(TimerTick);
         timer.Start();
     }
 
