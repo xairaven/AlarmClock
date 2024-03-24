@@ -82,10 +82,28 @@
         <Content Include="Assets\Credits\GithubProfilePhoto.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Assets\Music\Bells.ogg" />
+        <Content Include="Assets\Music\Bells.ogg">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Music\Guitar.ogg" />
+        <Content Include="Assets\Music\Guitar.ogg">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Music\Hop.ogg" />
+        <Content Include="Assets\Music\Hop.ogg">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Music\Masterpiece.ogg" />
+        <Content Include="Assets\Music\Masterpiece.ogg">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Syncfusion.Licensing" Version="25.1.35" />
       <PackageReference Include="Syncfusion.SfInput.WPF" Version="25.1.35" />
+      <PackageReference Include="Syncfusion.Shared.WPF" Version="25.1.35" />
     </ItemGroup>
     
     

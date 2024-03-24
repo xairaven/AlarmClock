@@ -60,7 +60,7 @@ public partial class MainWindow : Window
 
     private void Open_Settings(object sender, RoutedEventArgs e)
     {
-        new Settings().Show();
+        new Settings(_context).Show();
     }
 
     private void Open_AlarmsList(object sender, RoutedEventArgs e)

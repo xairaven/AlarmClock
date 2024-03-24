@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:AlarmClock.Views"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:uc="clr-namespace:AlarmClock.Views.Controls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
@@ -12,86 +13,106 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="500" />
     </WindowChrome.WindowChrome>
-    
+
     <Border Style="{StaticResource WindowBorder}">
         <Grid WindowChrome.IsHitTestVisibleInChrome="True">
             <Grid.RowDefinitions>
-                <RowDefinition Height="32px"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="32px" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
-            <uc:CustomTitleBar Grid.Row="0" 
+
+            <uc:CustomTitleBar Grid.Row="0"
                                WindowTitle="Settings"
-                               WindowIcon="../../Assets/Icons/Settings.png"/>
-            
+                               WindowIcon="../../Assets/Icons/Settings.png" />
+
             <Border Grid.Row="1" Margin="10" BorderBrush="#424244" BorderThickness="1" CornerRadius="10">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="5*" />
                     </Grid.RowDefinitions>
-                    
+
                     <Label Grid.Row="0" Grid.Column="0" Content="Music:"
-                           Style="{StaticResource SettingsLabel}"/>
-                    <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#424244" />
-                    
-                    <Label Grid.Row="2" Grid.Column="0" Content="Alarm Duration:"
                            Style="{StaticResource SettingsLabel}" />
-                    
-                    
-                    <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Height="30">
+                    <Rectangle Grid.Row="0" Grid.Column="1" Style="{StaticResource VerticalSeparator}" />
+                    <Border Grid.Row="0" Grid.Column="2" Background="#565659" 
+                            CornerRadius="10" VerticalAlignment="Center" Margin="10 0">
+                        <syncfusion:ComboBoxAdv x:Name="MusicBox" Loaded="MusicBox_OnLoaded"
+                                                FontFamily="{StaticResource GoogleSans}"/>
+                    </Border>
+                    <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="#424244" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="Alarm Duration (s.):"
+                           Style="{StaticResource SettingsLabel}" />
+                    <Rectangle Grid.Row="2" Grid.Column="1" Style="{StaticResource VerticalSeparator}" />
+                    <Grid Grid.Row="2" Grid.Column="2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Border Grid.Column="1"  Width="55" CornerRadius="10" Background="#6c6c6e">
+                        <Slider x:Name="AlarmDurationSlider" Grid.Column="0"  
+                                VerticalAlignment="Center" Margin="10 0 0 0"
+                                Minimum="5" Maximum="25" IsSnapToTickEnabled="True"
+                                TickFrequency="1"/>
+                        <Label Grid.Column="1" Content="{Binding ElementName=AlarmDurationSlider, Path=Value}" Style="{StaticResource SettingsLabel}"/>
+                    </Grid>
+                    <Separator Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Background="#424244" />
+
+                    <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Height="30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="1" Width="55" CornerRadius="10" Background="#6c6c6e">
                             <Button Content="Cancel"
                                     Click="Close"
-                                    Style="{StaticResource ButtonsAddAlarm}"/>
+                                    Style="{StaticResource ButtonsAddAlarm}" />
                         </Border>
-                        
-                        <Border Grid.Column="3"  Width="55" CornerRadius="10" Background="#6c6c6e">
+
+                        <Border Grid.Column="3" Width="55" CornerRadius="10" Background="#6c6c6e">
                             <Button Content="Save"
-                                    Style="{StaticResource ButtonsAddAlarm}"
-                            />
+                                    Style="{StaticResource ButtonsAddAlarm}" />
                         </Border>
                     </Grid>
-                    
-                    <Separator Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="#424244" />
-                    
-                    <Grid Grid.Row="5" Grid.Column="0" ColumnSpan="2" Margin="10">
+
+                    <Separator Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Background="#424244" />
+
+                    <Grid Grid.Row="6" Grid.Column="0" ColumnSpan="3" Margin="10">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
                             <RowDefinition />
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        
+
                         <Label Grid.Row="0" Content="Credits:"
                                FontFamily="{StaticResource Stormfaze}"
                                Style="{StaticResource CreditsLabel}"
-                               FontSize="24"/>
-                        <Image Grid.Row="1" Source="../../Assets/Credits/GithubProfilePhoto.png" Margin="0 5"/>
-                        
+                               FontSize="24" />
+                        <Image Grid.Row="1" Source="../../Assets/Credits/GithubProfilePhoto.png" Margin="0 5" />
+
                         <Label Grid.Row="2" Content="Kovalov Alex"
-                               Style="{StaticResource CreditsLabel}"/>
+                               Style="{StaticResource CreditsLabel}" />
                         <Label Grid.Row="3" Content="Kyiv Polytechnic Institute, 2024"
-                               Style="{StaticResource CreditsLabel}"/>
-                        <Label Grid.Row="4" Content="Github Profile" 
-                               Style="{StaticResource CreditsLabel}"/>
+                               Style="{StaticResource CreditsLabel}" />
+                        <Label Grid.Row="4" Content="Github Profile"
+                               Style="{StaticResource CreditsLabel}" />
                     </Grid>
                 </Grid>
             </Border>
