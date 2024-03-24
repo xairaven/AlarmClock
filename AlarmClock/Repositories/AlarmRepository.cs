@@ -38,7 +38,7 @@ public static class AlarmRepository
 
     private static void CheckAlarmRelevance()
     {
-        var forDeletion = new List<int>();
+        var forDeletion = new List<Guid>();
 
         foreach (var record in AlarmList)
         {
@@ -67,7 +67,7 @@ public static class AlarmRepository
         return alarm;
     }
 
-    public static AlarmRecord EditRecord(int recordId, string title, DateTime dateTime, bool isAlarmEnabled)
+    public static AlarmRecord EditRecord(Guid recordId, string title, DateTime dateTime, bool isAlarmEnabled)
     {
         var record = GetRecord(recordId);
         record.Title = title;
@@ -79,7 +79,7 @@ public static class AlarmRepository
         return record;
     }
 
-    public static AlarmRecord GetRecord(int id)
+    public static AlarmRecord GetRecord(Guid id)
     {
         var alarm = AlarmList.Find(x => x.Id == id);
 
@@ -89,7 +89,7 @@ public static class AlarmRepository
         return alarm;
     }
 
-    public static AlarmRecord RemoveRecord(int id)
+    public static AlarmRecord RemoveRecord(Guid id)
     {
         var alarm = AlarmList.Find(x => x.Id == id);
 
