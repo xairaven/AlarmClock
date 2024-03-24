@@ -47,7 +47,7 @@ public partial class EditAlarmWindow : Window
 
         var resultDatetime = date.Date.Add(time);
         
-        AlarmRepository.EditRecord(_record.Id, title, resultDatetime);
+        AlarmRepository.EditRecord(_record.Id, title, resultDatetime, _record.IsAlarmEnabled);
         
         UpdateList();
 

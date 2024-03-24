@@ -57,8 +57,8 @@ public partial class AlarmElement : UserControl
         IsAlarmEnabled = !IsAlarmEnabled;
         GetImageCorrespondingStatus();
 
-        var alarmRecord = AlarmRepository.GetRecord(Id);
-        alarmRecord.IsAlarmEnabled = IsAlarmEnabled;
+        var record = AlarmRepository.GetRecord(Id);
+        AlarmRepository.EditRecord(Id, record.Title, record.DateTime, IsAlarmEnabled);
     }
 
     private void EditAlarm(object sender, RoutedEventArgs e)
