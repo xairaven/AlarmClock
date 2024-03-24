@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using AlarmClock.Data;
+using AlarmClock.Model;
 using AlarmClock.Serializing;
 
 namespace AlarmClock.Repositories;

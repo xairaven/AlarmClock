@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using AlarmClock.Data;
+using AlarmClock.Model;
 using AlarmClock.Repositories;
 using AlarmClock.Views.Controls;
 

@@ -1,4 +1,4 @@
-﻿namespace AlarmClock.Data;
+﻿namespace AlarmClock.Model;
 
 public class AlarmRecord
 {
