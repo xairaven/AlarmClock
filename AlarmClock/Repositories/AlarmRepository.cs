@@ -14,6 +14,15 @@ public static class AlarmRepository
         return alarm;
     }
 
+    public static AlarmRecord EditRecord(int recordId, string title, DateTime dateTime)
+    {
+        var record = GetRecord(recordId);
+        record.Title = title;
+        record.DateTime = dateTime;
+
+        return record;
+    }
+
     public static AlarmRecord GetRecord(int id)
     {
         var alarm = AlarmList.Find(x => x.Id == id);

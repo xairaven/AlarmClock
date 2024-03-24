@@ -63,7 +63,9 @@ public partial class AlarmElement : UserControl
 
     private void EditAlarm(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        var alarmRecord = AlarmRepository.GetRecord(Id);
+        var panel = ((Panel)this.Parent);
+        new EditAlarmWindow(panel, alarmRecord).Show();
     }
 
     private void DeleteAlarm(object sender, RoutedEventArgs e)
