@@ -32,13 +32,13 @@ public partial class MainWindow : Window
 
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
-        TimerTick(null, null);
+        UpdateClockData(null, null);
 
-        var timer = new TimerService(TimerTick);
+        var timer = new TimerService(UpdateClockData);
         timer.Start();
     }
 
-    private void TimerTick(object? sender, EventArgs? e)
+    private void UpdateClockData(object? sender, EventArgs? e)
     {
         var dateTime = DateTime.Now;
         
