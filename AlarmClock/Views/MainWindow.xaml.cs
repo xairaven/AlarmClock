@@ -35,7 +35,7 @@ public partial class MainWindow : Window
         UpdateClockData(null, null);
 
         var timer = new TimerService(UpdateClockData);
-        timer.Start();
+        timer.Start(timeSynchronization: true);
     }
 
     private void UpdateClockData(object? sender, EventArgs? e)

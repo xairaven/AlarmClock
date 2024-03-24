@@ -15,12 +15,15 @@ public class TimerService
         _timer.Tick += tick;
     }
 
-    public DispatcherTimer Start()
+    public DispatcherTimer Start(bool timeSynchronization=false)
     {
-        var now = DateTime.Now;
-        var interval = TimeSpan.FromSeconds(1);
-        var delay = interval.Subtract(TimeSpan.FromMilliseconds(now.Millisecond));
-        Thread.Sleep(delay);
+        if (timeSynchronization)
+        {
+            var now = DateTime.Now;
+            var interval = TimeSpan.FromSeconds(1);
+            var delay = interval.Subtract(TimeSpan.FromMilliseconds(now.Millisecond));
+            Thread.Sleep(delay);
+        }
         
         _timer.Start();
 
