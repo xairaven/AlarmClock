@@ -30,7 +30,16 @@ public partial class AlarmElement : UserControl
     }
 
     [Description("Status of alarm, On/Off"), Category("Alarm")]
-    public bool IsAlarmEnabled = true;
+    private bool _isAlarmEnabled = true;
+    public bool IsAlarmEnabled
+    {
+        get => _isAlarmEnabled;
+        set
+        {
+            _isAlarmEnabled = value;
+            GetImageCorrespondingStatus();
+        }
+    }
     
     public AlarmElement()
     {
@@ -55,7 +64,6 @@ public partial class AlarmElement : UserControl
     private void SwitchStatus(object sender, RoutedEventArgs e)
     {
         IsAlarmEnabled = !IsAlarmEnabled;
-        GetImageCorrespondingStatus();
 
         var record = AlarmRepository.GetRecord(Id);
         AlarmRepository.EditRecord(Id, record.Title, record.DateTime, IsAlarmEnabled);

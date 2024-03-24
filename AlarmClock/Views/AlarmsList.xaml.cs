@@ -34,6 +34,8 @@ public partial class AlarmsList : Window
             
             var monthName = datetime.ToString("MMM", CultureInfo.InvariantCulture);
             element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00} {monthName}";
+
+            element.IsAlarmEnabled = record.IsAlarmEnabled;
             
             ListPanel.Children.Add(element);
         }
