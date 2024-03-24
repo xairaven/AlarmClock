@@ -8,8 +8,9 @@
         xmlns:syncfusion="clr-namespace:Syncfusion.Windows.Controls.Input;assembly=Syncfusion.SfInput.Wpf"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Width="200" Height="200"
-        MinWidth="200" MinHeight="200"
+        Width="200" Height="250"
+        MinWidth="200" MinHeight="250"
+        MaxHeight="400" MaxWidth="400"
         Style="{StaticResource AuxiliaryWindow}">
 
     <WindowChrome.WindowChrome>
@@ -32,6 +33,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*" />
                         <RowDefinition Height="2*" />
+                        <RowDefinition Height="2*" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -39,9 +41,19 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <Label Grid.Row="0" Grid.Column="0" Content="Time:" 
+                    <Label Grid.Row="0" Grid.Column="0" Content="Title:" 
                            Style="{StaticResource LabelAddAlarm}"/>
                     <Border Grid.Row="0" Grid.Column="1"
+                            Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
+                        <TextBox x:Name="TitlePicker"
+                                 Style="{StaticResource PickerAddAlarm}"
+                                 TextWrapping="NoWrap"
+                                 MaxLength="15"/>
+                    </Border>
+                    
+                    <Label Grid.Row="1" Grid.Column="0" Content="Time:" 
+                           Style="{StaticResource LabelAddAlarm}"/>
+                    <Border Grid.Row="1" Grid.Column="1"
                             Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
                         <syncfusion:SfTimePicker x:Name="TimePicker"
                                                  FormatString="HH:mm" 
@@ -50,9 +62,9 @@
                                                  AllowInlineEditing="True"/>
                     </Border>
                     
-                    <Label Grid.Row="1" Grid.Column="0" Content="Date:" 
+                    <Label Grid.Row="2" Grid.Column="0" Content="Date:" 
                            Style="{StaticResource LabelAddAlarm}"/>
-                    <Border Grid.Row="1" Grid.Column="1"
+                    <Border Grid.Row="2" Grid.Column="1"
                             Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
                         <syncfusion:SfDatePicker x:Name="DatePicker"
                                                  FormatString="dd.MM.yyyy"
@@ -62,7 +74,7 @@
                     </Border>
                     
                     
-                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>

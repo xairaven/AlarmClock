@@ -26,6 +26,7 @@ public partial class AddAlarmWindow : Window
 
     private void SaveAlarm(object sender, RoutedEventArgs e)
     {
+        var title = TitlePicker.Text.Trim();
         var time = TimePicker.Value!.Value.TimeOfDay;
         var date = DatePicker.Value!.Value.Date;
 
@@ -41,7 +42,7 @@ public partial class AddAlarmWindow : Window
 
         var resultDatetime = date.Date.Add(time);
 
-        AlarmController.AddRecord("", resultDatetime);
+        AlarmController.AddRecord(title, resultDatetime);
         
         UpdateList();
 
