@@ -80,12 +80,13 @@
 
                         <Border Grid.Column="1" Width="55" CornerRadius="10" Background="#6c6c6e">
                             <Button Content="Cancel"
-                                    Click="Close"
+                                    Click="CloseWindow"
                                     Style="{StaticResource ButtonsAddAlarm}" />
                         </Border>
 
                         <Border Grid.Column="3" Width="55" CornerRadius="10" Background="#6c6c6e">
                             <Button Content="Save"
+                                    Click="SaveSettings"
                                     Style="{StaticResource ButtonsAddAlarm}" />
                         </Border>
                     </Grid>

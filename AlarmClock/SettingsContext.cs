@@ -5,7 +5,7 @@ namespace AlarmClock;
 
 public class SettingsContext
 {
-    public Dictionary<string, string> Settings { get; }
+    public Dictionary<string, int> Settings { get; }
     private readonly string _settingsPath;
     
     public SettingsContext()
@@ -18,17 +18,17 @@ public class SettingsContext
             InitializeSettings();
         }
         
-        Settings = Json.CustomDeserialize<Dictionary<string, string>>(_settingsPath);
+        Settings = Json.CustomDeserialize<Dictionary<string, int>>(_settingsPath);
     }
     
     private void InitializeSettings()
     {
         using (File.Create(_settingsPath)) {}
 
-        var temp = new Dictionary<string, string>
+        var temp = new Dictionary<string, int>
         {
-            {"MusicId", "1"},
-            {"AlarmDuration", "10"}
+            {"MusicId", 1},
+            {"AlarmDuration", 1}
         };
             
         Json.CustomSerialize(_settingsPath, temp);

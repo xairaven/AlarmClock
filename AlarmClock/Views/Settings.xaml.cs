@@ -14,7 +14,7 @@ public partial class Settings : Window
         _context = context;
     }
 
-    private void Close(object sender, RoutedEventArgs e)
+    private void CloseWindow(object sender, RoutedEventArgs e)
     {
         Close();
     }
@@ -23,7 +23,23 @@ public partial class Settings : Window
     {
         MusicBox.ItemsSource = Enum.GetValues(typeof(Music)).Cast<Music>();
 
-        var musicId = int.Parse(_context.Settings["MusicId"]);
+        var musicId = _context.Settings["MusicId"];
         MusicBox.SelectedItem = (Music)musicId;
+        
+        var duration = _context.Settings["AlarmDuration"];
+        AlarmDurationSlider.Value = duration;
+    }
+
+    private void SaveSettings(object sender, RoutedEventArgs e)
+    {
+        var musicId = (int) MusicBox.SelectedItem;
+        var alarmDuration = (int) AlarmDurationSlider.Value;
+
+        _context.Settings["MusicId"] = musicId;
+        _context.Settings["AlarmDuration"] = alarmDuration;
+        
+        _context.UpdateJson();
+        
+        Close();
     }
 }
