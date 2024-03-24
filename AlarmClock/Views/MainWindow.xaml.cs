@@ -10,6 +10,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using AlarmClock;
+using AlarmClock.Services;
 using AlarmClock.Views;
 
 namespace Lab3;
@@ -19,8 +21,12 @@ namespace Lab3;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private readonly SettingsContext _context;
+    
     public MainWindow()
     {
+        _context = StartupService.ConfigureSettings(this);
+        
         InitializeComponent();
     }
 

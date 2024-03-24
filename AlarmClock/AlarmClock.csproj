@@ -83,10 +83,6 @@
     <ItemGroup>
       <PackageReference Include="Syncfusion.SfInput.WPF" Version="25.1.35" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
     
     
 </Project>
