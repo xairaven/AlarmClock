@@ -42,6 +42,28 @@
         </Style.Triggers>
     </Style>
     
+    <Style x:Key="TransparentButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#565659"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <FontFamily x:Key="Stormfaze">../../Assets/Fonts/stormfaze.ttf#Stormfaze</FontFamily>
     <FontFamily x:Key="Digital-7">../../Assets/Fonts/digital-7.ttf#Digital-7</FontFamily>
     <FontFamily x:Key="GoogleSans">../../Assets/Fonts/ProductSans-Regular.ttf</FontFamily>

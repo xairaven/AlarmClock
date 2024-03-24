@@ -65,6 +65,14 @@
         <Content Include="Assets\Icons\SwitchOn.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Assets\Icons\Delete.png" />
+        <Content Include="Assets\Icons\Delete.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Assets\Icons\AlarmSettings.png" />
+        <Content Include="Assets\Icons\AlarmSettings.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
