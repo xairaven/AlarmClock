@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using AlarmClock.Controllers;
 
 namespace AlarmClock.Views.Controls;
 
@@ -55,5 +56,8 @@ public partial class AlarmElement : UserControl
     {
         IsAlarmEnabled = !IsAlarmEnabled;
         GetImageCorrespondingStatus();
+
+        var alarmRecord = AlarmController.AlarmList.Find(x => x.Id == Id);
+        if (alarmRecord != null) alarmRecord.IsAlarmEnabled = IsAlarmEnabled;
     }
 }
