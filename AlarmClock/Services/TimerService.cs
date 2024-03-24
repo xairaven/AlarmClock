@@ -6,11 +6,11 @@ public class TimerService
 {
     private DispatcherTimer _timer;
     
-    public TimerService(EventHandler tick)
+    public TimerService(EventHandler tick, TimeSpan interval)
     {
         _timer = new DispatcherTimer
         {
-            Interval = TimeSpan.FromSeconds(1)
+            Interval = interval
         };
         _timer.Tick += tick;
     }
