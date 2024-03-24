@@ -1,8 +1,8 @@
 ﻿using AlarmClock.Data;
 
-namespace AlarmClock.Controllers;
+namespace AlarmClock.Repositories;
 
-public static class AlarmController
+public static class AlarmRepository
 {
     public static List<AlarmRecord> AlarmList { get; } = [];
 

@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows;
-using AlarmClock.Controllers;
 using AlarmClock.Data;
+using AlarmClock.Repositories;
 using AlarmClock.Views.Controls;
 
 namespace AlarmClock.Views;
@@ -42,7 +42,7 @@ public partial class AddAlarmWindow : Window
 
         var resultDatetime = date.Date.Add(time);
 
-        AlarmController.AddRecord(title, resultDatetime);
+        AlarmRepository.AddRecord(title, resultDatetime);
         
         UpdateList();
 
@@ -68,7 +68,7 @@ public partial class AddAlarmWindow : Window
         var listPanel = _listWindow.ListPanel;
 
         listPanel.Children.Clear();
-        foreach (var record in AlarmController.AlarmList)
+        foreach (var record in AlarmRepository.AlarmList)
         {
             var element = new AlarmElement();
 
