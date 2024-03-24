@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using AlarmClock;
+using AlarmClock.Controllers;
 using AlarmClock.Services;
 using AlarmClock.Views;
 
@@ -36,6 +37,9 @@ public partial class MainWindow : Window
 
         var timer = new TimerService(UpdateClockData, TimeSpan.FromSeconds(1));
         timer.Start(timeSynchronization: true);
+
+        var controller = new AlarmController(_context);
+        controller.Start();
     }
 
     private void UpdateClockData(object? sender, EventArgs? e)

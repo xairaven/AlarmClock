@@ -1,36 +1,42 @@
 ﻿using AlarmClock.Repositories;
 using AlarmClock.Services;
+using AlarmClock.Views;
 
 namespace AlarmClock.Controllers;
 
-public static class AlarmController
+public class AlarmController
 {
-    private static SettingsContext _context;
-    
-    public static void Start(SettingsContext context)
+    private SettingsContext _context;
+
+    public AlarmController(SettingsContext context)
     {
         _context = context;
-        
-        var timer = new TimerService(CheckAlarms, TimeSpan.FromSeconds(30));
+    }
+    
+    public void Start()
+    {
+        var timer = new TimerService(CheckAlarms, TimeSpan.FromSeconds(3));
 
         timer.Start();
     }
 
-    private static void CheckAlarms(object? sender, EventArgs e)
+    private void CheckAlarms(object? sender, EventArgs e)
     {
         foreach (var record in AlarmRepository.AlarmList)
         {
-            var truncatedNow = DateTime.Now.Truncate(TimeSpan.FromMinutes(1));
-            var truncatedAlarmTime = record.DateTime.Truncate(TimeSpan.FromMinutes(1));
+            if (!record.IsAlarmEnabled) continue;
+            
+            var truncatedNow = Truncate(DateTime.Now, TimeSpan.FromMinutes(1));
+            var truncatedAlarmTime = Truncate(record.DateTime, TimeSpan.FromMinutes(1));
 
-            if (truncatedNow.CompareTo(truncatedAlarmTime) == 0)
-            {
-                // Show window of alarm 
-            }
+            if (truncatedNow.CompareTo(truncatedAlarmTime) != 0) continue;
+            
+            AlarmRepository.EditRecord(record.Id, record.Title, record.DateTime, !record.IsAlarmEnabled);
+            new AlarmNotification(_context).Show();
         }
     }
     
-    public static DateTime Truncate(this DateTime dateTime, TimeSpan timeSpan)
+    private static DateTime Truncate(DateTime dateTime, TimeSpan timeSpan)
     {
         if (timeSpan == TimeSpan.Zero) return dateTime; // Or could throw an ArgumentException
 
