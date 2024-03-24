@@ -75,7 +75,7 @@ public partial class AddAlarmWindow : Window
             element.Title = record.Title;
             
             var datetime = record.DateTime;
-            element.Time = $"{datetime.Hour:00}:{datetime.Minute}";
+            element.Time = $"{datetime.Hour:00}:{datetime.Minute:00}";
             
             var monthName = datetime.ToString("MMM", CultureInfo.InvariantCulture);
             element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00} {monthName}";
