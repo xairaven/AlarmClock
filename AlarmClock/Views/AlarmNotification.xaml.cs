@@ -79,7 +79,11 @@ public partial class AlarmNotification : Window
         _mediaPlayer.MediaEnded += PlayMusic;
 
         await Task.Run(() => Thread.Sleep(TimeSpan.FromSeconds(duration)));
-        _mediaPlayer.Stop();
+        if (_mediaPlayer.CanPause)
+        {
+            _mediaPlayer.Stop();
+            StopMusicButton.IsEnabled = false;
+        }
     }
     
     private void PlayMusic(object? sender, EventArgs? e)
@@ -91,5 +95,10 @@ public partial class AlarmNotification : Window
     private void StopMusic_OnClick(object sender, RoutedEventArgs e)
     {
         StopMusicButton.IsEnabled = false;
+
+        if (_mediaPlayer.CanPause)
+        {
+            _mediaPlayer.Stop();
+        }
     }
 }
