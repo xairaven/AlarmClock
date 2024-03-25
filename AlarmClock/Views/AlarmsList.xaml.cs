@@ -21,6 +21,8 @@ public partial class AlarmsList : Window
     
     public void UpdateList()
     {
+        AlarmRepository.CheckAlarmRelevance();
+        
         ListPanel.Children.Clear();
         foreach (var record in AlarmRepository.AlarmList)
         {

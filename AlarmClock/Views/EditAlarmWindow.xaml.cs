@@ -72,6 +72,8 @@ public partial class EditAlarmWindow : Window
 
     private void UpdateList()
     {
+        AlarmRepository.CheckAlarmRelevance();
+        
         _stackPanel.Children.Clear();
         foreach (var record in AlarmRepository.AlarmList)
         {
