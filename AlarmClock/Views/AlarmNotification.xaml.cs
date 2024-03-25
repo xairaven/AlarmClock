@@ -18,6 +18,9 @@ public partial class AlarmNotification : Window
         _record = record;
         
         _mediaPlayer = new MediaPlayer();
+        var volume = (double)_context.Settings["AlarmVolume"] / 10;
+        _mediaPlayer.Volume = volume;
+        
         Closed += OnClosed;
         
         OpenMusicFile(_context.Settings["MusicId"]);

@@ -28,7 +28,8 @@ public class SettingsContext
         var temp = new Dictionary<string, int>
         {
             {"MusicId", 1},
-            {"AlarmDuration", 1}
+            {"AlarmDuration", 5},
+            {"AlarmVolume", 5}
         };
             
         Json.CustomSerialize(_settingsPath, temp);

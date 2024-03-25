@@ -30,15 +30,20 @@ public partial class Settings : Window
         
         var duration = _context.Settings["AlarmDuration"];
         AlarmDurationSlider.Value = duration;
+
+        var volume = _context.Settings["AlarmVolume"];
+        AlarmVolumeSlider.Value = volume;
     }
 
     private void SaveSettings(object sender, RoutedEventArgs e)
     {
         var musicId = (int) MusicBox.SelectedItem;
         var alarmDuration = (int) AlarmDurationSlider.Value;
+        var alarmVolume = (int)AlarmVolumeSlider.Value;
 
         _context.Settings["MusicId"] = musicId;
         _context.Settings["AlarmDuration"] = alarmDuration;
+        _context.Settings["AlarmVolume"] = alarmVolume;
         
         _context.UpdateJson();
         
