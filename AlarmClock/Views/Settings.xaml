@@ -112,8 +112,14 @@
                                Style="{StaticResource CreditsLabel}" />
                         <Label Grid.Row="3" Content="Kyiv Polytechnic Institute, 2024"
                                Style="{StaticResource CreditsLabel}" />
-                        <Label Grid.Row="4" Content="Github Profile"
-                               Style="{StaticResource CreditsLabel}" />
+                        <Label Grid.Row="4"
+                               Style="{StaticResource CreditsLabel }" >
+                            <Hyperlink Style="{StaticResource HyperLinkCredits}"
+                                NavigateUri="http://www.github.com/xairaven" 
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                Github Profile
+                            </Hyperlink>
+                        </Label>
                     </Grid>
                 </Grid>
             </Border>

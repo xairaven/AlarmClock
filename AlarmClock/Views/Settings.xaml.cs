@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
+using System.Windows.Navigation;
 using AlarmClock.Data;
 
 namespace AlarmClock.Views;
@@ -41,5 +43,14 @@ public partial class Settings : Window
         _context.UpdateJson();
         
         Close();
+    }
+
+    private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+    {
+        Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri)
+        {
+            UseShellExecute = true
+        });
+        e.Handled = true;
     }
 }

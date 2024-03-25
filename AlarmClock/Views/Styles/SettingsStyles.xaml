@@ -25,4 +25,18 @@
         <Setter Property="Stroke" Value="#424244" />
     </Style>
     
+    <Style x:Key="HyperLinkCredits" TargetType="Hyperlink">
+        <Setter Property="Foreground" Value="LightGray" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontFamily" Value="{StaticResource GoogleSans}" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+        <Setter Property="Cursor" Value="Hand"/>
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="DarkGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
 </ResourceDictionary>
