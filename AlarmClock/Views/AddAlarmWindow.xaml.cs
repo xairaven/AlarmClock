@@ -44,7 +44,7 @@ public partial class AddAlarmWindow : Window
 
         AlarmRepository.AddRecord(title, resultDatetime);
         
-        UpdateList();
+        _listWindow.UpdateList();
 
         Close();
     }
@@ -61,27 +61,5 @@ public partial class AddAlarmWindow : Window
         // Compare TimePicker and Datetime.now.
         // If TimePicker is later (> 0) than DateTime.now, its real alarm
         return time.CompareTo(DateTime.Now.TimeOfDay) > 0;
-    }
-
-    private void UpdateList()
-    {
-        var listPanel = _listWindow.ListPanel;
-
-        listPanel.Children.Clear();
-        foreach (var record in AlarmRepository.AlarmList)
-        {
-            var element = new AlarmElement();
-
-            element.Id = record.Id;
-            element.Title = record.Title;
-            
-            var datetime = record.DateTime;
-            element.Time = $"{datetime.Hour:00}:{datetime.Minute:00}";
-            
-            var monthName = datetime.ToString("MMM", CultureInfo.InvariantCulture);
-            element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00} {monthName}";
-            
-            listPanel.Children.Add(element);
-        }
     }
 }

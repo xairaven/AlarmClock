@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using AlarmClock.Data;
 using AlarmClock.Model;
 using AlarmClock.Repositories;
@@ -84,6 +85,8 @@ public partial class EditAlarmWindow : Window
             
             var monthName = datetime.ToString("MMM", CultureInfo.InvariantCulture);
             element.Date = $"{datetime.DayOfWeek.ToString()[..3]}, {datetime.Day:00} {monthName}";
+            
+            element.IsAlarmEnabled = record.IsAlarmEnabled;
             
             _stackPanel.Children.Add(element);
         }

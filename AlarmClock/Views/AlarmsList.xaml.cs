@@ -19,7 +19,7 @@ public partial class AlarmsList : Window
         new AddAlarmWindow(this).Show();
     }
     
-    private void UpdateList()
+    public void UpdateList()
     {
         ListPanel.Children.Clear();
         foreach (var record in AlarmRepository.AlarmList)
