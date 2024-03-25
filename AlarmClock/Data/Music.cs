@@ -2,8 +2,8 @@
 
 public enum Music
 {
-    Bells = 1,
-    Guitar = 2,
-    Hop = 3,
-    Masterpiece = 4
+    Analogue = 1,
+    BedSide = 2,
+    Electronic = 3,
+    Ringtone = 4
 }

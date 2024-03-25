@@ -82,21 +82,24 @@
         <Content Include="Assets\Credits\GithubProfilePhoto.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <None Remove="Assets\Music\Bells.ogg" />
-        <Content Include="Assets\Music\Bells.ogg">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Remove="Assets\Music\Analogue.mp3" />
+        <Content Include="Assets\Music\Analogue.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <None Remove="Assets\Music\Guitar.ogg" />
-        <Content Include="Assets\Music\Guitar.ogg">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <None Remove="Assets\Music\BedSide.mp3" />
+        <Content Include="Assets\Music\BedSide.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <None Remove="Assets\Music\Hop.ogg" />
-        <Content Include="Assets\Music\Hop.ogg">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <None Remove="Assets\Music\Electronic.mp3" />
+        <Content Include="Assets\Music\Electronic.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <None Remove="Assets\Music\Masterpiece.ogg" />
-        <Content Include="Assets\Music\Masterpiece.ogg">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <None Remove="Assets\Music\Ringtone.mp3" />
+        <Content Include="Assets\Music\Ringtone.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
