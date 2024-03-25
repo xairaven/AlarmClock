@@ -36,7 +36,7 @@ public static class AlarmRepository
         Json.CustomSerialize(_jsonPath, AlarmList);
     }
 
-    private static void CheckAlarmRelevance()
+    public static void CheckAlarmRelevance()
     {
         var forDeletion = new List<Guid>();
 
