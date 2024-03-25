@@ -1,0 +1,43 @@
+﻿name: dotnet-desktop
+
+on:
+  push:
+    branches:
+      - release
+
+env:
+  PROJECT_PATH: AlarmClock/AlarmClock.csproj
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: .NET Restore
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+
+      - name: .NET Build
+        run: dotnet build ${{ env.PROJECT_PATH }} -c Release -p:PublishSingleFile=true --no-restore
+
+      - name: .NET Publish
+        run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x64 -p:PublishSingleFile=true --no-restore
+
+      - name: Create release ZIP archive
+        run: tar.exe acvf Release.zip -C .\AlarmClock\bin\Release\net8.0-windows\win-x64\publish\ --strip-components=1 .
+
+      - name: Create release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ github.ref_name }}
+          title: ${{ github.ref_name }}
+          prerelease: false
+          files: ./Release.zip
