@@ -32,7 +32,7 @@ public class AlarmController
             if (truncatedNow.CompareTo(truncatedAlarmTime) != 0) continue;
             
             AlarmRepository.EditRecord(record.Id, record.Title, record.DateTime, !record.IsAlarmEnabled);
-            new AlarmNotification(_context).Show();
+            new AlarmNotification(_context, record).Show();
         }
     }
     

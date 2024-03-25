@@ -82,6 +82,10 @@
         <Content Include="Assets\Credits\GithubProfilePhoto.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Assets\Icons\Stop.png" />
+        <Content Include="Assets\Icons\Stop.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     
     <ItemGroup>

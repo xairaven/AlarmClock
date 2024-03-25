@@ -7,7 +7,7 @@
         xmlns:uc="clr-namespace:AlarmClock.Views.Controls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Width="400" Height="500"
+        Width="250" Height="210" MinHeight="210" MinWidth="250" ResizeMode="NoResize"
         Style="{StaticResource AuxiliaryWindow}">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="500" />
@@ -24,7 +24,55 @@
                                WindowTitle="Alarm Notification"
                                WindowIcon="../../Assets/Icons/AlarmClock.png" />
             
-            
+            <Border Grid.Row="1" Margin="5" BorderBrush="#424244" BorderThickness="1" CornerRadius="10" 
+                    Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="1.5*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Row="0" Grid.Column="0" Content="Title:" 
+                           Style="{StaticResource TitlesLabelAlarmNotification}"/>
+                    <Border Grid.Row="0" Grid.Column="1"
+                            Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
+                        <Label x:Name="TitleLabel"
+                               Content="" Style="{StaticResource LabelAlarmNotification}"/>
+                    </Border>
+                    
+                    <Label Grid.Row="1" Grid.Column="0" Content="Time:" 
+                           Style="{StaticResource TitlesLabelAlarmNotification}"/>
+                    <Border Grid.Row="1" Grid.Column="1"
+                            Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
+                        <Label x:Name="TimeLabel"
+                               Content="" Style="{StaticResource LabelAlarmNotification}"/>
+                    </Border>
+                    
+                    <Label Grid.Row="2" Grid.Column="0" Content="Date:" 
+                           Style="{StaticResource TitlesLabelAlarmNotification}"/>
+                    <Border Grid.Row="2" Grid.Column="1"
+                            Background="#565659" CornerRadius="10" VerticalAlignment="Center" >
+                        <Label x:Name="DateLabel"
+                               Content="" Style="{StaticResource LabelAlarmNotification}"/>
+                    </Border>
+                    
+                    <Border x:Name="StopMusicBorder" 
+                        Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                            CornerRadius="10" Background="#565659" Margin="3">
+                        <Button Margin="2" x:Name="StopMusicButton"
+                                Click="StopMusic_OnClick"
+                                Style="{StaticResource TransparentButtonNotification}">
+                            <Image Source="../Assets/Icons/Stop.png"/>
+                        </Button>
+                    </Border>
+                </Grid>
+            </Border>
         </Grid>
     </Border>
 </Window>
